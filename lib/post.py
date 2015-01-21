@@ -5,10 +5,11 @@ import re
 
 class Post(object):
 
-    def __init__(self, title, url, id):
+    def __init__(self, title, url, id, author=''):
         self.title = self.removeTILandThat(title)
         self.url = url
         self.id = id
+        self.author = author
 
     def cap(self, str):
         return str[0].upper() + str[1:]
@@ -65,6 +66,6 @@ class PostLoader(object):
 
         for child in jsonResponse['data']['children']:
             data = child['data']
-            posts.append(Post(data['title'], data['url'], data['id']))
+            posts.append(Post(data['title'], data['url'], data['id'], data['author']))
 
         return posts

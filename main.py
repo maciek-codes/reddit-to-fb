@@ -18,8 +18,9 @@ def post_to_page(access_token, post):
 
 	pageid = keys['page_id']
 
+	message = post.title + "\n(via {0})".format(post.author)
 	data = urllib.urlencode({
-		'message': post.title,
+		'message': message,
 		'link': post.url
 	})
 
