@@ -1,0 +1,9 @@
+keys.json
+
+# Ignore packages that I had to manually send to WebJob 
+dateutil/
+azure/
+six.py
+
+# Ignore zipped package I send to azure
+*.zip
